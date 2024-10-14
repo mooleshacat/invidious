@@ -67,6 +67,11 @@
 
 ## Features
 
+**Patches**
+- revert of d9df90b fixes signin error
+- add http proxy
+- add redis server (see instructions below)
+
 **User features**
 - Lightweight
 - No ads
@@ -101,6 +106,12 @@
 
 **Hosting invidious:**
 
+Note: You still require postgresql as only some things are using redis. You should notice an increase in speed when loading pages/feeds/videos. You should also notice a decrease in disk usage.
+
+- Install redis-server & enable ```apt install -y redis-server ; systemctl enable redis-server ;```
+  - Compile and start Invidious
+  - Check logs for ```Oct 13 20:20:11 catspeed invidious[1110061]: Connected to redis```
+  - check connections ```netstat -tlnpa | grep :6379``` for established connections to :6379
 - [Follow the installation instructions](https://docs.invidious.io/installation/)
 
 
