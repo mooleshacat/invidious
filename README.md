@@ -70,7 +70,7 @@
 **Patches**
 - revert of d9df90b fixes signin error
 - add http proxy
-- add redis server (see instructions below)
+- add redis server (see "Hosting invidious" below)
 
 **User features**
 - Lightweight
