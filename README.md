@@ -1,3 +1,14 @@
+# REPOSITORY MOVED
+Please note the repository has been moved from mooleshacat/invidious to catspeed-cc/invidious.
+
+You can update your local clone with ```git remote set-url origin https://github.com/catspeed-cc/invidious```
+
+As of [PR #4](https://github.com/catspeed-cc/invidious/pull/4) dev-http-proxy branch has been merged into master.
+
+You no longer need to clone development branch, and in fact, I would advise you to ```git checkout master``` for stability.
+
+<br />
+
 <div align="center">
   <img src="assets/invidious-colored-vector.svg" width="192" height="192" alt="Invidious logo">
   <h1>Invidious</h1>
@@ -70,6 +81,7 @@
 **Patches**
 - revert of d9df90b fixes signin error
 - add http proxy
+- add redis server (see "Hosting invidious" below)
 
 **User features**
 - Lightweight
@@ -105,6 +117,12 @@
 
 **Hosting invidious:**
 
+Note: You still require postgresql as only some things are using redis. You should notice an increase in speed when loading pages/feeds/videos. You should also notice a decrease in disk usage.
+
+- Install redis-server & enable ```apt install -y redis-server ; systemctl enable redis-server ;```
+  - Compile and start Invidious
+  - Check logs for ```Oct 13 20:20:11 catspeed invidious[1110061]: Connected to redis```
+  - check connections ```netstat -tlnpa | grep :6379``` for established connections to :6379
 - [Follow the installation instructions](https://docs.invidious.io/installation/)
 
 
