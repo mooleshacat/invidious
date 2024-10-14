@@ -8,7 +8,7 @@ You can update your local clone with ```git remote set-url origin https://github
 
 You no longer need to clone development branch, and in fact, I would advise you to ```git checkout master``` for stability.
 
-If you want redis, change to or stay on development branch ```git checkout development```
+If you want redis to boost performance, change to or stay on development branch ```git checkout development```
 
 <br />
 
