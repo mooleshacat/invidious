@@ -27,6 +27,9 @@ class ReloadPOToken
     config_yaml = ENV.has_key?(env_config_yaml) ? ENV.fetch(env_config_yaml) : File.read(config_file)
 
     config = Config.from_yaml(config_yaml)
+    
+    LOGGER.info("reloadpottoken.cr: get_tokens: pot: " + @@pot)
+    LOGGER.info("reloadpottoken.cr: get_tokens: vdata: " + @@vdata)
 
     @@pot = config.po_token
     @@vdata = config.visitor_data

@@ -324,6 +324,8 @@ module YoutubeAPI
       client_context["client"]["visitorData"] = CONFIG.visitor_data.as(String)
     end
 
+    LOGGER.info("youtube_api.cr: get_tokens: vdata2: " + ReloadPOToken.vdata.as(String))
+
     return client_context
   end
 
@@ -486,6 +488,8 @@ module YoutubeAPI
       },
     }
 
+    LOGGER.info("youtube_api.cr: get_tokens: pot: " + ReloadPOToken.pot.as(String))
+
     # Append the additional parameters if those were provided
     if params != ""
       data["params"] = params
@@ -619,6 +623,8 @@ module YoutubeAPI
     if CONFIG.visitor_data.is_a?(String)
       headers["X-Goog-Visitor-Id"] = ReloadPOToken.vdata.as(String)
     end
+
+    LOGGER.info("youtube_api.cr: get_tokens: vdata1: " + ReloadPOToken.vdata.as(String))
 
     # Logging
     LOGGER.debug("YoutubeAPI: Using endpoint: \"#{endpoint}\"")
