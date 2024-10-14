@@ -19,9 +19,7 @@ module Invidious::Database::Videos
       WHERE id = $1
     SQL
 
-    REDIS_DB.del(id)
-    REDIS_DB.del(id + ":time")
-
+    PG_DB.exec(request, id)
   end
 
   def delete_expired
@@ -49,15 +47,6 @@ module Invidious::Database::Videos
       WHERE id = $1
     SQL
 
-    if ((info = REDIS_DB.get(id)) && (time = REDIS_DB.get(id + ":time")))
-      return Video.new({
-        id:      id,
-        info:    JSON.parse(info).as_h,
-        updated: Time.parse(time, "%Y-%m-%d %H:%M:%S %z", Time::Location::UTC),
-      })
-    else
-      return nil
-    end
-
+    return PG_DB.query_one?(request, id, as: Video)
   end
 end
