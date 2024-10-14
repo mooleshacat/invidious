@@ -67,6 +67,10 @@
 
 ## Features
 
+**Patches**
+- revert of d9df90b fixes signin error
+- add http proxy
+
 **User features**
 - Lightweight
 - No ads
