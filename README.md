@@ -85,6 +85,7 @@ You no longer need to clone development branch, and in fact, I would advise you 
 - add reconnect to sighelper
 - add redis server (see "Hosting invidious" below)
 - changed player buffer seconds (possibly saves bandwidth)
+- token updater patch (mooleshacat)
 
 **User features**
 - Lightweight

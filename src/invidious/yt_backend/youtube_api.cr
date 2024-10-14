@@ -482,7 +482,7 @@ module YoutubeAPI
         "contentPlaybackContext" => playback_ctx,
       },
       "serviceIntegrityDimensions" => {
-        "poToken" => CONFIG.po_token,
+        "poToken" => ReloadPOToken.pot.as(String),
       },
     }
 
@@ -617,7 +617,7 @@ module YoutubeAPI
     end
 
     if CONFIG.visitor_data.is_a?(String)
-      headers["X-Goog-Visitor-Id"] = CONFIG.visitor_data.as(String)
+      headers["X-Goog-Visitor-Id"] = ReloadPOToken.pot.as(String)
     end
 
     # Logging
