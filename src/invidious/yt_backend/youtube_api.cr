@@ -321,7 +321,7 @@ module YoutubeAPI
     end
 
     if CONFIG.visitor_data.is_a?(String)
-      client_context["client"]["visitorData"] = CONFIG.visitor_data.as(String)
+      client_context["client"]["visitorData"] = ReloadPOToken.vdata.as(String)
     end
 
     LOGGER.info("youtube_api.cr: get_tokens: vdata2: " + ReloadPOToken.vdata.as(String))
