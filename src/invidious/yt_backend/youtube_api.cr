@@ -617,7 +617,7 @@ module YoutubeAPI
     end
 
     if CONFIG.visitor_data.is_a?(String)
-      headers["X-Goog-Visitor-Id"] = ReloadPOToken.pot.as(String)
+      headers["X-Goog-Visitor-Id"] = ReloadPOToken.vdata.as(String)
     end
 
     # Logging
