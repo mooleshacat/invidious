@@ -78,6 +78,10 @@ You no longer need to clone development branch, and in fact, I would advise you 
 
 ## Features
 
+**Patches**
+- revert of d9df90b fixes signin error
+- add http proxy
+
 **User features**
 - Lightweight
 - No ads
