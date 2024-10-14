@@ -28,7 +28,7 @@ class ReloadPOToken
 
     config = Config.from_yaml(config_yaml)
     
-    LOGGER.info("reloadpottoken.cr: get_tokens: pot: " + @@pot)
+    LOGGER.info("reloadpottoken.cr: get_tokens: pot: " + @@pot.as(String))
     LOGGER.info("reloadpottoken.cr: get_tokens: vdata: " + @@vdata)
 
     @@pot = config.po_token
