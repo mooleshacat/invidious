@@ -84,6 +84,7 @@ If you want redis to boost performance, change to or stay on development branch 
 **Patches**
 - revert of d9df90b fixes signin error
 - add http proxy
+- token updater patch (mooleshacat)
 
 **User features**
 - Lightweight
