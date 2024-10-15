@@ -8,8 +8,8 @@ class Invidious::Jobs::MonitorCfgPotokensJob < Invidious::Jobs::BaseJob
     
       ReloadPOToken.get_tokens
     
-      LOGGER.info("jobs: MonitorCfgPotokens: pot: " + ReloadPOToken.pot.as(String))
-      LOGGER.info("jobs: MonitorCfgPotokens: vdata: " + ReloadPOToken.vdata.as(String))
+      LOGGER.info("jobs: MonitorCfgPotokens: GET pot: " + ReloadPOToken.pot.as(String))
+      LOGGER.info("jobs: MonitorCfgPotokens: GET vdata: " + ReloadPOToken.vdata.as(String))
     
       sleep 15.seconds
     end

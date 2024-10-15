@@ -322,6 +322,7 @@ module YoutubeAPI
 
     if ReloadPOToken.vdata.is_a?(String)
       client_context["client"]["visitorData"] = ReloadPOToken.vdata.as(String)
+      LOGGER.info("jobs: MonitorCfgPotokens: SET vdata: " + ReloadPOToken.vdata.as(String))
     end
 
     return client_context
@@ -486,6 +487,8 @@ module YoutubeAPI
       },
     }
 
+    LOGGER.info("jobs: MonitorCfgPotokens: SET pot: " + ReloadPOToken.pot.as(String))
+
     # Append the additional parameters if those were provided
     if params != ""
       data["params"] = params
@@ -618,6 +621,7 @@ module YoutubeAPI
 
     if ReloadPOToken.vdata.is_a?(String)
       headers["X-Goog-Visitor-Id"] = ReloadPOToken.vdata.as(String)
+      LOGGER.info("jobs: MonitorCfgPotokens: SET vdata: " + ReloadPOToken.vdata.as(String))
     end
 
     # Logging
