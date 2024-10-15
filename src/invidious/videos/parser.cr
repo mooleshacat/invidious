@@ -405,21 +405,6 @@ def parse_video_info(video_id : String, player_response : Hash(String, JSON::Any
       .try &.as_s.split(" ", 2)[0]
   end
 
-<<<<<<< HEAD
-=======
-  # Channel watermark
-  # Annotations is different from legacy annotations
-  if watermark = player_response.dig?("annotations", 0, "playerAnnotationsExpandedRenderer", "featuredChannel")
-    watermark_data = {
-      "startTimeMs"  => watermark["startTimeMs"],
-      "endTimeMS"    => watermark["endTimeMs"],
-      "thumbnailURL" => watermark["watermark"]["thumbnails"][0]["url"],
-    }
-  else
-    watermark_data = {} of String => JSON::Any
-  end
-
->>>>>>> parent of 3293aafa (Add channel watermark to player)
   # Return data
 
   if live_now
