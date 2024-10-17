@@ -5,6 +5,8 @@
 RELEASE  := 1
 STATIC   := 0
 
+DISABLE_QUIC := 1
+
 NO_DBG_SYMBOLS := 0
 
 
