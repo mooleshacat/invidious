@@ -11,7 +11,8 @@ class Invidious::Jobs::MonitorCfgTokensJob < Invidious::Jobs::BaseJob
       LOGGER.info("jobs: MonitorCfgTokensJob: pot: " + ReloadTokens.pot.as(String))
       LOGGER.info("jobs: MonitorCfgTokensJob: vdata: " + ReloadTokens.vdata.as(String))
     
-      sleep 15.seconds
+      # crontab min is 1 minute
+      sleep 1.minute
     end
   end
 end
